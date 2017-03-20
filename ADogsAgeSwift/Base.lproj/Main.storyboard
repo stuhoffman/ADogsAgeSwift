@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ADogsAgeSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,72 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainPortrait" translatesAutoresizingMaskIntoConstraints="NO" id="pwS-w8-5CH">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gx8-cS-D1P">
+                                <rect key="frame" x="84" y="38" width="209" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="C2S-J6-GwX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Enter Birth Date">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="enterBirthdayPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vqu-2x-dOd"/>
+                                </connections>
+                            </button>
+                            <datePicker hidden="YES" clipsSubviews="YES" contentMode="scaleAspectFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="SpC-71-jTQ">
+                                <rect key="frame" x="1" y="94" width="375" height="216"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="EU0-cL-iUf"/>
+                                    <constraint firstAttribute="width" constant="375" id="k9s-0n-8S5"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="511629652.090128">
+                                    <!--2017-03-19 15:20:52 +0000-->
+                                </date>
+                            </datePicker>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kSu-GW-W02">
+                                <rect key="frame" x="130" y="358" width="81" height="37"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Show Age">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="showAgeBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="05c-hU-pKZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="SpC-71-jTQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1mo-jc-mjc"/>
+                            <constraint firstItem="SpC-71-jTQ" firstAttribute="top" secondItem="Gx8-cS-D1P" secondAttribute="bottom" constant="20" id="FeN-GS-xpL"/>
+                            <constraint firstItem="Gx8-cS-D1P" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="G96-JS-MUb"/>
+                            <constraint firstItem="kSu-GW-W02" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OhE-gc-N65"/>
+                            <constraint firstItem="SpC-71-jTQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ST5-vO-b2W"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="pwS-w8-5CH" secondAttribute="bottom" id="UnO-Nj-3Dd"/>
+                            <constraint firstItem="pwS-w8-5CH" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Wyf-aW-NvN"/>
+                            <constraint firstItem="Gx8-cS-D1P" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aF6-Iz-5al"/>
+                            <constraint firstItem="pwS-w8-5CH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="hoP-vP-ZXG"/>
+                            <constraint firstAttribute="trailing" secondItem="pwS-w8-5CH" secondAttribute="trailing" id="nN8-sU-w4J"/>
+                            <constraint firstItem="kSu-GW-W02" firstAttribute="top" secondItem="SpC-71-jTQ" secondAttribute="bottom" constant="20" id="okv-Cn-xGQ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="birthDateWheel" destination="SpC-71-jTQ" id="mnX-N8-1pA"/>
+                        <outlet property="enterBirthDateBtn" destination="Gx8-cS-D1P" id="0Dj-tx-tuY"/>
+                        <outlet property="mainPortrait" destination="pwS-w8-5CH" id="r0b-dP-BQF"/>
+                        <outlet property="showAgeBtn" destination="kSu-GW-W02" id="XvO-rs-18a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-18.399999999999999" y="-727.28635682158927"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="mainPortrait" width="1224" height="1632"/>
+    </resources>
 </document>

@@ -300,6 +300,7 @@
 				20C7A7CA1E7E24270067E6BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
